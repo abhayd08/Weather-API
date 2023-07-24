@@ -1,0 +1,17 @@
+#location-text{
+    width: 50vw;
+    justify-content: center; 
+    text-align: center;
+}
+
+@media(max-width: 496px){
+    #location-text{
+        width: 75vw
+    }
+}
+
+@media(max-width: 304px){
+    #location-text{
+        width: 95vw
+    }
+}

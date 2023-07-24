@@ -1,0 +1,34 @@
+#container{
+    height: 4rem;
+    width: 95vw;
+    margin-top: 1.2rem;
+    margin-left: 5vw;
+    background-color: rgb(24,119,211);
+    color: rgb(49, 45, 45);
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.3rem;
+    font-family: 'Victor Mono', monospace;
+    text-align: center;
+}
+
+@media(max-width: 400px){
+    #container{
+        height: 5rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media(max-width: 400px){
+    #container{
+        font-size: 1rem;
+    }
+}
+
+@media(max-width: 170px){
+    #container{
+        font-size: .75rem;
+    }
+}

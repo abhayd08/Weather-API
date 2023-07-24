@@ -1,0 +1,51 @@
+  
+  #header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    padding: 0.5em;
+    padding-left: 1rem;
+    line-height: 1.5em;
+    border-bottom: 1.5px solid rgb(255, 193, 6);
+    border-bottom-left-radius: 3.5vw;
+    border-bottom-right-radius: 3.5vw;
+    border-bottom-style: groove;
+    background: yellow;
+    font-family: 'Special Elite', cursive;
+    letter-spacing: 0.3em;
+  
+  }
+   
+  a {
+      text-decoration: none;
+      color: white;
+  }
+  
+  a :hover{
+      color: aquamarine;
+  }
+
+  
+  @media(max-width: 315px){
+  
+      .fa-brands{
+        margin-bottom: .75em;
+      }   
+  
+  }
+  
+  @media(max-width: 532px){
+    #header{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    #personal-links{
+      margin-top: 0.75em;
+    }
+  
+  }
