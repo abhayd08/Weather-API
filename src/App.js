@@ -11,6 +11,7 @@ import DisplayBox from "./Components/DisplayBox"
 import DisplayText from "./Components/DisplayText"
 import WeatherCard from "./Components/WeatherCard"
 import BodyStyles from "./Components/BodyStyles"
+import Footer from "./Components/Footer"
 
 function App() {
   const Alert = React.forwardRef(function Alert(props, ref) {
@@ -76,7 +77,7 @@ function App() {
   return (
     <>
     <Box id = "container-for-image" sx = {{        
-        backgroundColor: "rgba(13, 110, 253, 0.25)", 
+        backgroundColor: "rgb(67 253 13 / 17%)", 
         backgroundImage: "", 
         color: "black", 
         backgroundRepeat: "no-repeat", 
@@ -90,6 +91,7 @@ function App() {
     <DisplayText weatherData = {weatherData} />
     {weatherData?<WeatherCard weatherData = {weatherData}/> : displayContentWhileSearch}
     <BodyStyles weatherData={weatherData} /> 
+    <Footer />
     </>
   )
 }

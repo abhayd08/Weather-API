@@ -1,0 +1,55 @@
+#footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #0dcaf04a;
+}
+
+#links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%
+}
+
+#link-heading {
+    margin-right: 1em;
+    margin-bottom: .75em;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a :hover{
+    color: aquamarine;
+}
+
+@media(max-width: 500px){
+    #footer{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #brand {
+        text-align: center;
+    }
+}
+
+@media(max-width: 256px){
+    #footer{
+        padding: 0rem;
+    }
+}
+
+@media(max-width: 200px){
+    .platform-name{
+        display: none;
+    }
+    #link-heading{
+        margin-right: 0;
+    }
+}
