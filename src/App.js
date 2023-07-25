@@ -21,7 +21,16 @@ function App() {
   const [weatherData, setWeatherData] = useState("")
   const [displayContentWhileSearch, setDisplayContentWhileSearch] = useState("")
 
-  const screenWidth = window.innerWidth;
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [screenWidth])
+
 
   useEffect(()=>{
     const timerId = setTimeout(async ()=>{
@@ -33,7 +42,7 @@ function App() {
           <strong className = "text-black" style = {{marginTop: "1rem"}}>Loading...</strong>
           </Box>)
           
-          const responseData = await axios.get(`http://api.weatherapi.com/v1/current.json?key=77c435ebd76949e38e4155526232307&q=${inputValue}`)
+          const responseData = await axios.get(`https://api.weatherapi.com/v1/current.json?key=77c435ebd76949e38e4155526232307&q=${inputValue}`)
           setWeatherData(responseData.data)
           document.title = `Weather | ${responseData.data.location.name}`
         }

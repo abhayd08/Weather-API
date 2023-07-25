@@ -1,3 +1,4 @@
+
 export default function BodyStyles({weatherData}) {
     const body = document.body
     body.style.backgroundRepeat="no-repeat"
@@ -37,8 +38,7 @@ export default function BodyStyles({weatherData}) {
         }
     }
     else{
-        body.style.backgroundImage = "url('https://img.freepik.com/free-vector/forest-nature-scene-with-pond-many-trees-sunset-time_1308-55699.jpg')"
-        body.style.height = "100vh"
-        }
+        body.style.backgroundColor = "rgba(13, 110, 253, 0.25)"
+    }
 
 }
