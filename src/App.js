@@ -41,7 +41,7 @@ function App() {
           <strong className = "text-black" style = {{marginTop: "1rem"}}>Loading...</strong>
           </Box>)
           
-          const responseData = await axios.get(`http://api.weatherapi.com/v1/current.json?key=77c435ebd76949e38e4155526232307&q=${inputValue}`)
+          const responseData = await axios.get(`https://api.weatherapi.com/v1/current.json?key=77c435ebd76949e38e4155526232307&q=${inputValue}`)
           setWeatherData(responseData.data)
           document.title = `Weather | ${responseData.data.location.name}`
         }
