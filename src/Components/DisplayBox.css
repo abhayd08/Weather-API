@@ -32,6 +32,9 @@
 .temp-box{
     font-family: 'Special Elite', cursive;
     font-size: 2rem;
+    background-color: black;
+    text-align: center;
+    color: white;
 }
 
 #label {

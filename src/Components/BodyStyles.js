@@ -23,9 +23,11 @@ export default function BodyStyles({weatherData}) {
             }
             else if(weatherCondition.toLowerCase().split(" ").includes("thunder") || weatherCondition.toLowerCase().split(" ").includes("thundery") ){
                 containerForImage.style.backgroundImage = "url('https://media.tenor.com/o-hNb7sjQSwAAAAd/rain-lightning.gif')"
+                containerForImage.style.color = "white"
             }
             else if(weatherCondition.toLowerCase().split(" ").includes("mist")){
                 containerForImage.style.backgroundImage = "url('https://cdnb.artstation.com/p/assets/images/images/036/014/633/original/viktor-moroz-demo-environment-5.gif?1616510564')"
+                containerForImage.style.color = "white"
             }
             else if(weatherCondition.toLowerCase().split(" ").includes("rain")){
                 containerForImage.style.backgroundImage = "url('https://external-preview.redd.it/qQjQCwBAMNS6CjC5E1CG7bQxTDYjnRrtNcljEKohHjM.gif?width=1200&height=628.272251309&s=94b76e506b8a43e501b2132834e6733c5769853e')"
@@ -34,11 +36,16 @@ export default function BodyStyles({weatherData}) {
             else if(weatherCondition.toLowerCase().split(" ").includes("drizzle")){
                 containerForImage.style.backgroundImage = "url('https://media.tenor.com/aKTZMFuBbdEAAAAC/rain-window.gif')"
             }
+            else{
+                containerForImage.style.backgroundImage = ""
+                containerForImage.style.color = "black"
+            }
         }
 
         return ()=>{
             if(containerForImage){
                 containerForImage.style.backgroundImage = ""
+                containerForImage.style.color = "black"
             }
         }
     })
