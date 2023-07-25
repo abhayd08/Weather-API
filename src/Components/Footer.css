@@ -25,7 +25,7 @@ a {
 }
 
 a :hover{
-    color: aquamarine;
+    color: rgb(165, 12, 171);
 }
 
 @media(max-width: 500px){
@@ -41,7 +41,7 @@ a :hover{
 
 @media(max-width: 256px){
     #footer{
-        padding: 0rem;
+        padding: 0;
     }
 }
 

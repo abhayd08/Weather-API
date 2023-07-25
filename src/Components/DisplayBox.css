@@ -72,3 +72,15 @@
     
     }
 }
+
+@media(max-width: 110px){
+    #label{
+        padding-left: 0;
+        font-size: .75rem;
+        letter-spacing: 1px;
+        font-weight: lighter;
+    }
+    #input-box {
+        border-radius: 0;
+    }
+}
