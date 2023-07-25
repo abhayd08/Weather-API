@@ -5,12 +5,12 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import "./App.css"
 
+import Header from "./Components/Header"
 import AppBar from "./Components/AppBar"
 import DisplayBox from "./Components/DisplayBox"
 import DisplayText from "./Components/DisplayText"
 import WeatherCard from "./Components/WeatherCard"
 import BodyStyles from "./Components/BodyStyles"
-import Header from "./Components/Header"
 
 function App() {
   const Alert = React.forwardRef(function Alert(props, ref) {
@@ -20,7 +20,6 @@ function App() {
   const [inputValue, setInputValue] = useState("")
   const [weatherData, setWeatherData] = useState("")
   const [displayContentWhileSearch, setDisplayContentWhileSearch] = useState("")
-
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
   useEffect(() => {
@@ -42,7 +41,7 @@ function App() {
           <strong className = "text-black" style = {{marginTop: "1rem"}}>Loading...</strong>
           </Box>)
           
-          const responseData = await axios.get(`https://api.weatherapi.com/v1/current.json?key=77c435ebd76949e38e4155526232307&q=${inputValue}`)
+          const responseData = await axios.get(`http://api.weatherapi.com/v1/current.json?key=77c435ebd76949e38e4155526232307&q=${inputValue}`)
           setWeatherData(responseData.data)
           document.title = `Weather | ${responseData.data.location.name}`
         }
@@ -55,8 +54,10 @@ function App() {
       catch(error){
         console.log(error)
         document.title = "Weather Forecast"
+        
         setDisplayContentWhileSearch(<Box className = "display-content-while-search">
-                                        <Snackbar open={true}>
+                                        <Snackbar
+                                        open={true} >
                                           <Alert id = "alert" severity="error" sx={{ width: '35vw' }}>
                                               {screenWidth > 300? "There is an error loading the data. Please check the console tab for more details." : "There is an error loading the data."}
                                           </Alert>
@@ -74,9 +75,18 @@ function App() {
 
   return (
     <>
+    <Box id = "container-for-image" sx = {{        
+        backgroundColor: "rgba(13, 110, 253, 0.25)", 
+        backgroundImage: "", 
+        color: "black", 
+        backgroundRepeat: "no-repeat", 
+        backgroundSize: "100% calc(100% - 1rem)"
+        }}
+    >
     <Header />
     <AppBar />
     <DisplayBox inputValue = {inputValue} setInputValue = {setInputValue} weatherData = {weatherData}/>
+    </Box>
     <DisplayText weatherData = {weatherData} />
     {weatherData?<WeatherCard weatherData = {weatherData}/> : displayContentWhileSearch}
     <BodyStyles weatherData={weatherData} /> 

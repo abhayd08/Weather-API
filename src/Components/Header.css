@@ -9,11 +9,11 @@
     padding: 0.5em;
     padding-left: 1rem;
     line-height: 1.5em;
-    border-bottom: 1.5px solid rgb(255, 193, 6);
+    border-bottom: 1.5px solid rgb(255, 196, 0);
     border-bottom-left-radius: 3.5vw;
     border-bottom-right-radius: 3.5vw;
     border-bottom-style: groove;
-    background: yellow;
+    background-color: rgba(255, 193, 7, 59%);
     font-family: 'Special Elite', cursive;
     letter-spacing: 0.3em;
   
