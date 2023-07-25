@@ -61,7 +61,7 @@ function App() {
     return () => {
       clearTimeout(timerId)
     }
-  }, [inputValue])
+  }, [inputValue, screenWidth])
 
   return (
     <>
