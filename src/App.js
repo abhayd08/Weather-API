@@ -67,11 +67,11 @@ function App() {
     <>
     <Header weatherData = {weatherData}/>
     <Box id = "container-for-image" sx = {{        
-        background: "linear-gradient(0deg,hsla(0,0%,6%,0),#111)",
-        backgroundImage: `url("https://github.com/abhayd08/Weather-Forecast/blob/main/public/assets/hero.jpg")`, 
+        background: "#80808021",
+        backgroundImage: "",
         color: "black", 
         backgroundRepeat: "no-repeat", 
-        backgroundSize: "100% calc(100% - 1rem)"
+        backgroundSize: "100% calc(100%)"
         }}
     >
       <AppBar />
