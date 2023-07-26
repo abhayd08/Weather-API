@@ -23,18 +23,19 @@ export default function DisplayWeatherCards () {
     const weatherDataArray = [weatherDataVaranasi, weatherDataNewDelhi, weatherDataMumbai, weatherDataLucknow, weatherDataBangalore, weatherDataIndore, weatherDataUnnao, weatherDataAhmedabad]
 
     useEffect(()=>{
-        
-        (async ()=>{
-            setDisplayContentWhileSearch(
-                <Box className = "display-content-while-search">
-                    <CircularProgress color = "success" />
-                    <strong className = "text-black" style = {{marginTop: "1rem"}}>Loading...</strong>
-                </Box>
-            )
+        setDisplayContentWhileSearch(
+            <Box className = "display-content-while-search">
+                <CircularProgress color = "success" />
+                <strong className = "text-black" style = {{marginTop: "1rem"}}>Loading...</strong>
+            </Box>
+        )
+    }, [])
     
+    useEffect(()=>{
+        (async ()=>{
             setTimeout(()=>{
                 setDisplayContentWhileSearch("")
-            }, 1450)
+            }, 1500)
 
             try{
 
