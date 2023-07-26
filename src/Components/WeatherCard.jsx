@@ -34,7 +34,7 @@ const WeatherCard = ({weatherData}) => {
                             <li className = "mx-1 text-body-secondary text-decoration-none" variant = "subtitle2" style = {{fontWeight: "lighter", fontSize: "1.2rem"}}><strong>{`${weatherData.location.country}`}</strong></li>
                         </ul>
                     </Box>
-                    <Box className = "content-title mt-3">
+                    <Box className = "content-title mt-5">
                     <Typography component = "h6" variant = "subtitle">Condition</Typography>
                     <Typography variant = "subtitle1">{weatherData.current.condition.text}</Typography>
                     </Box>
@@ -58,7 +58,7 @@ const WeatherCard = ({weatherData}) => {
                     <Typography component = "h6" variant = "subtitle">Last Updated</Typography>
                     <Typography variant = "subtitle1">{lastTimeUpdated}</Typography>
                     </Box>
-                    <Box className = "content-title">
+                    <Box id = "last-content" className = "content-title">
                     <Typography component = "h6" variant = "subtitle">Local Time</Typography>
                     <Typography variant = "subtitle1">{currentLocalTime.split("at").join(",")}</Typography>
                     </Box>

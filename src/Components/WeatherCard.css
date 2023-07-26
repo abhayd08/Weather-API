@@ -3,7 +3,7 @@
     height: auto;
     margin: auto;
     margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
     background-color: rgba(255, 193, 7, 39%)
 }
 
@@ -17,6 +17,10 @@
     font-size: 1.35em;
     border-bottom: .75px solid rgb(137, 126, 126);
     border-bottom-style: groove;
+}
+
+#last-content {
+    border-bottom: 0;
 }
 
 @media(max-width: 592px) {

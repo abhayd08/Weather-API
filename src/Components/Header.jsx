@@ -10,7 +10,7 @@ function Header({weatherData}) {
                               style = {{height: "40px", width: "40px"}}
                               alt = "weather-logo"
                             />
-                            <strong className = "mx-2 text-body text-decoration-none">{`${weatherData.location.name}, ${weatherData.location.country}`}</strong>
+                            <strong className = "mx-2 text-body text-decoration-none">{`${weatherData.location.name} |`}</strong>
                             <strong className = "text-body-secondary text-decoration-none">{weatherData.current["temp_c"]}°C</strong>
                           </Box>: ""
             }
