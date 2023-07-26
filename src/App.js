@@ -1,15 +1,14 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios"
 import { CircularProgress, Box } from "@mui/material"
-import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import "./App.css"
 
 import Header from "./Components/Header"
 import AppBar from "./Components/AppBar"
 import DisplayBox from "./Components/DisplayBox"
-import DisplayText from "./Components/DisplayText"
 import WeatherCard from "./Components/WeatherCard"
+import DisplayWeatherCards from "./Components/DisplayWeatherCards";
 import BodyStyles from "./Components/BodyStyles"
 import Footer from "./Components/Footer"
 
@@ -57,12 +56,11 @@ function App() {
         document.title = "Weather Forecast"
         
         setDisplayContentWhileSearch(<Box className = "display-content-while-search">
-                                        <Snackbar
-                                        open={true} >
+                                        
                                           <Alert id = "alert" severity="error" sx={{ width: '35vw' }}>
                                               {screenWidth > 300? "There is an error loading the data. Please check the console tab for more details." : "There is an error loading the data."}
                                           </Alert>
-                                        </Snackbar>
+                                        
                                      </Box>
                                     )
         setWeatherData("")
@@ -76,20 +74,20 @@ function App() {
 
   return (
     <>
+    <Header weatherData = {weatherData}/>
     <Box id = "container-for-image" sx = {{        
-        backgroundColor: "rgb(67 253 13 / 17%)", 
+        background: "linear-gradient(0deg,hsla(0,0%,6%,0),#111)",
         backgroundImage: "", 
         color: "black", 
         backgroundRepeat: "no-repeat", 
         backgroundSize: "100% calc(100% - 1rem)"
         }}
     >
-    <Header />
-    <AppBar />
-    <DisplayBox inputValue = {inputValue} setInputValue = {setInputValue} weatherData = {weatherData}/>
+      <AppBar />
+      <DisplayBox inputValue = {inputValue} setInputValue = {setInputValue} weatherData = {weatherData}/>
     </Box>
-    <DisplayText weatherData = {weatherData} />
     {weatherData?<WeatherCard weatherData = {weatherData}/> : displayContentWhileSearch}
+    <DisplayWeatherCards />
     <BodyStyles weatherData={weatherData} /> 
     <Footer />
     </>

@@ -14,7 +14,7 @@ function SearchBox ({inputValue, setInputValue, weatherData}) {
                     <label id = "label" htmlFor = "input-box">{inputValue === ""? "Type in, the location." : "You can type in, another location."}</label>
                     <TextField id = "input-box"
                     name = "search"
-                    placeholder = "Enter the City"
+                    placeholder = "Location"
                     value = {inputValue}
                     onChange = {(event)=>{
                     setInputValue(event.target.value)

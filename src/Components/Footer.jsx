@@ -6,7 +6,7 @@ export default function Footer () {
           <div className="container">
             <div className="mb-3 my-4" id = "brand">
               <a className="d-inline-flex align-items-center mb-2 text-body-secondary text-decoration-none" href="/" aria-label="Weather Forecast"> 
-                <strong className="fs-5">Weather Forecast</strong>
+                <strong className="fs-5">Weather Forecast - App</strong>
               </a>
               <ul className="list-unstyled ">
                 <li className="mb-2">Designed and built by <strong className = "text-body-secondary text-decoration-none">Abhay Dixit</strong></li>

@@ -6,7 +6,8 @@
     background-color: #0df03487;
     font-size: 1.5rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 2rem;
     align-items: center;
     letter-spacing: 0.3rem;
     font-family: 'Victor Mono', monospace;

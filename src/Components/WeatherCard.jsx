@@ -28,7 +28,13 @@ const WeatherCard = ({weatherData}) => {
                 sx = {{height: "112px", width: "112px"}}
                 />
                 <CardContent>
-                    <Box className = "content-title">
+                    <Box style = {{display: "flex", justifyContent: "center", alignItems: "center", flexWrap : "wrap"}}>
+                        <ul className = "list-unstyled">
+                            <li style = {{fontSize: "2rem"}} className = "mx-1 text-body-secondary text-decoration-none" variant = "title1"><strong>{`${weatherData.location.name}`}</strong></li>
+                            <li className = "mx-1 text-body-secondary text-decoration-none" variant = "subtitle2" style = {{fontWeight: "lighter", fontSize: "1.2rem"}}><strong>{`${weatherData.location.country}`}</strong></li>
+                        </ul>
+                    </Box>
+                    <Box className = "content-title mt-3">
                     <Typography component = "h6" variant = "subtitle">Condition</Typography>
                     <Typography variant = "subtitle1">{weatherData.current.condition.text}</Typography>
                     </Box>
