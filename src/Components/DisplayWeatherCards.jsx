@@ -33,10 +33,6 @@ export default function DisplayWeatherCards () {
     
     useEffect(()=>{
         (async ()=>{
-            setTimeout(()=>{
-                setDisplayContentWhileSearch("")
-            }, 1500)
-
             try{
 
                 const responseVaranasi = await axios.get("https://api.weatherapi.com/v1/current.json?key=77c435ebd76949e38e4155526232307&q=Varanasi, India")
@@ -55,6 +51,10 @@ export default function DisplayWeatherCards () {
                 setWeatherDataUnnao(responseUnnao.data)
                 const responseAhmedabad = await axios.get("https://api.weatherapi.com/v1/current.json?key=77c435ebd76949e38e4155526232307&q=Ahmedabad, India")
                 setWeatherDataAhmedabad(responseAhmedabad.data)
+
+                setTimeout(()=>{
+                    setDisplayContentWhileSearch("")
+                }, 1500)
 
             }
             catch(error) {
