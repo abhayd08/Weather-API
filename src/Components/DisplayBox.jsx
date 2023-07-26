@@ -11,7 +11,7 @@ function SearchBox ({inputValue, setInputValue, weatherData}) {
         <Box id = "display-field">
             <Box id ="search-field">
                 <Stack spacing = {1}>
-                    <label id = "label" htmlFor = "input-box">{inputValue === ""? "Type in, the location." : "You can type in, another location."}</label>
+                    <label id = "label" className = "text-decoration-none text-body-secondary" htmlFor = "input-box">{inputValue === ""? "Type in, the location." : "You can type in, another location."}</label>
                     <TextField id = "input-box"
                     name = "search"
                     placeholder = "Location"

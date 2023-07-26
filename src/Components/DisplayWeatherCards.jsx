@@ -1,6 +1,8 @@
+import React from "react"
 import {useState, useEffect} from "react"
-import {Card, CardMedia, CardContent, Box, Grid, Typography} from "@mui/material"
+import {Card, CardMedia, CardContent, Box, Grid, Typography, CircularProgress} from "@mui/material"
 import axios from "axios";
+import MuiAlert from '@mui/material/Alert';
 
 export default function DisplayWeatherCards () {
     const [weatherDataVaranasi, setWeatherDataVaranasi] = useState("")
@@ -12,11 +14,30 @@ export default function DisplayWeatherCards () {
     const [weatherDataUnnao, setWeatherDataUnnao] = useState("")
     const [weatherDataAhmedabad, setWeatherDataAhmedabad] = useState("")
 
+    const [displayContentWhileSearch, setDisplayContentWhileSearch] = useState("")
+
+    const Alert = React.forwardRef(function Alert(props, ref) {
+        return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+      });
+
     const weatherDataArray = [weatherDataVaranasi, weatherDataNewDelhi, weatherDataMumbai, weatherDataLucknow, weatherDataBangalore, weatherDataIndore, weatherDataUnnao, weatherDataAhmedabad]
 
     useEffect(()=>{
+        
         (async ()=>{
+            setDisplayContentWhileSearch(
+                <Box className = "display-content-while-search">
+                    <CircularProgress color = "success" />
+                    <strong className = "text-black" style = {{marginTop: "1rem"}}>Loading...</strong>
+                </Box>
+            )
+    
+            setTimeout(()=>{
+                setDisplayContentWhileSearch("")
+            }, 1450)
+
             try{
+
                 const responseVaranasi = await axios.get("https://api.weatherapi.com/v1/current.json?key=77c435ebd76949e38e4155526232307&q=Varanasi, India")
                 setWeatherDataVaranasi(responseVaranasi.data)
                 const responseNewDelhi = await axios.get("https://api.weatherapi.com/v1/current.json?key=77c435ebd76949e38e4155526232307&q=New Delhi, India")
@@ -33,12 +54,21 @@ export default function DisplayWeatherCards () {
                 setWeatherDataUnnao(responseUnnao.data)
                 const responseAhmedabad = await axios.get("https://api.weatherapi.com/v1/current.json?key=77c435ebd76949e38e4155526232307&q=Ahmedabad, India")
                 setWeatherDataAhmedabad(responseAhmedabad.data)
+
             }
             catch(error) {
                 console.log(error)
+
+                setDisplayContentWhileSearch(<Box className = "display-content-while-search">                      
+                                                <Alert id = "alert" severity="error" sx={{ width: '35vw' }}>
+                                                    There is an error loading the data. Please check the console tab for more details.
+                                                </Alert>
+                                             </Box>
+                )
             }
         }
         )()
+
     }, [])
 
     useEffect(()=>{
@@ -60,9 +90,17 @@ export default function DisplayWeatherCards () {
                 setWeatherDataUnnao(responseUnnao.data)
                 const responseAhmedabad = await axios.get("https://api.weatherapi.com/v1/current.json?key=77c435ebd76949e38e4155526232307&q=Ahmedabad, India")
                 setWeatherDataAhmedabad(responseAhmedabad.data)
+
             }
             catch(error) {
                 console.log(error)
+
+                setDisplayContentWhileSearch(<Box className = "display-content-while-search">                      
+                                                <Alert id = "alert" severity="error" sx={{ width: '35vw' }}>
+                                                    There is an error loading the data. Please check the console tab for more details.
+                                                </Alert>
+                                             </Box>
+                )
             }
         }, 480000)
 
@@ -74,6 +112,7 @@ export default function DisplayWeatherCards () {
     if(weatherDataArray[0] !== "" && weatherDataArray[1] !== "" && weatherDataArray[3] !== "" && weatherDataArray[3] !== "" && weatherDataArray[4] !== "" && weatherDataArray[5] !== ""  && weatherDataArray[6] !== "" && weatherDataArray[7] !== "" ){
         return (
             <Box>
+                {displayContentWhileSearch}
                 <Grid container style = {{marginTop: "2.5rem", display: "flex", justifyContent: "space-around"}}>
                     {weatherDataArray.map((cityData)=>{
     
@@ -106,7 +145,7 @@ export default function DisplayWeatherCards () {
                                             <strong className = "text-body-secondary text-decoration-none">{cityData.current["temp_f"]}°F</strong>
                                         </Box>
                                         <Box className = "mt-5">
-                                            <Typography style = {{fontWeight: "lighter"}} variant = "subtitle2">{lastTimeUpdated}</Typography>
+                                            <Typography variant = "subtitle2">{lastTimeUpdated}</Typography>
                                         </Box>
                                     </CardContent>
                                 </Card>

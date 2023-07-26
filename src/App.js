@@ -20,15 +20,6 @@ function App() {
   const [inputValue, setInputValue] = useState("")
   const [weatherData, setWeatherData] = useState("")
   const [displayContentWhileSearch, setDisplayContentWhileSearch] = useState("")
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-
-  useEffect(() => {
-    const handleResize = () => setScreenWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [screenWidth])
 
 
   useEffect(()=>{
@@ -58,7 +49,7 @@ function App() {
         setDisplayContentWhileSearch(<Box className = "display-content-while-search">
                                         
                                           <Alert id = "alert" severity="error" sx={{ width: '35vw' }}>
-                                              {screenWidth > 300? "There is an error loading the data. Please check the console tab for more details." : "There is an error loading the data."}
+                                              There is an error loading the data. Please check the console tab for more details.
                                           </Alert>
                                         
                                      </Box>
@@ -70,14 +61,14 @@ function App() {
     return () => {
       clearTimeout(timerId)
     }
-  }, [inputValue, screenWidth])
+  }, [inputValue])
 
   return (
     <>
     <Header weatherData = {weatherData}/>
     <Box id = "container-for-image" sx = {{        
         background: "linear-gradient(0deg,hsla(0,0%,6%,0),#111)",
-        backgroundImage: "", 
+        backgroundImage: `url("https://github.com/abhayd08/Weather-Forecast/blob/main/public/assets/hero.jpg")`, 
         color: "black", 
         backgroundRepeat: "no-repeat", 
         backgroundSize: "100% calc(100% - 1rem)"
