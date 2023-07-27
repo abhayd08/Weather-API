@@ -6,10 +6,8 @@
     align-items: center;
 }
 
-@media(max-width: 768px){
-    #alert {
-        width: 70vw
-    }
+#blank-container {
+    height: 5.5rem;
 }
 
 @media(max-width: 768px){
@@ -21,5 +19,17 @@
 @media(max-width: 300px){
     #alert {
         width: 90vw
+    }
+}
+
+@media(max-width: 592px){
+    #blank-container {
+        height: 1.5rem;
+    }
+}
+
+@media(max-width: 208px){
+    #blank-container {
+        height: 0;
     }
 }

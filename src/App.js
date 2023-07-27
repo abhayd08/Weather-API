@@ -86,6 +86,7 @@ function App() {
     >
       <AppBar />
       <DisplayBox inputValue = {inputValue} setInputValue = {setInputValue} weatherData = {weatherData}/>
+      <Box id = "blank-container"></Box>
     </Box>
     {weatherData?<WeatherCard weatherData = {weatherData}/> : displayContentWhileSearch}
     {displayContentWhileSearch2}

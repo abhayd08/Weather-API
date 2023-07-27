@@ -87,4 +87,8 @@
     #label{
         font-weight: lighter;
     }
+
+    #display-field {
+        overflow-x: scroll
+    }
 }

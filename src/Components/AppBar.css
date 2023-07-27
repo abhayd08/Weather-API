@@ -4,7 +4,7 @@
     margin-top: 1.2rem;
     margin-left: 5vw;
     background-color: rgb(134 254 144 / 28%);
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     display: flex;
     justify-content: flex-start;
     padding-left: 2rem;
@@ -16,26 +16,21 @@
 @media(max-width: 400px){
     #container-appbar{
         height: 5rem;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
 }
 
-@media(max-width: 400px){
-    #container-appbar{
-        font-size: 1rem;
-    }
-}
 
 @media(max-width: 170px){
     #container-appbar{
-        font-size: .75rem;
+        font-size: .85rem;
     }
 }
 
 @media(max-width: 110px){
     #container-appbar{
         letter-spacing: .15rem;
-        font-size: .55rem;
+        font-size: .65rem;
     }
 }
 
