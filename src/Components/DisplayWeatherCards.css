@@ -1,14 +1,18 @@
-#img-container {
+#img-container-1 {
     height: 96px; 
     width: 96px
 }
 
-#card-content {
+#card-content-1 {
     width: 95%;
 }
 
-#city-name{
+#city-name-1{
     font-size: 1.3rem
+}
+
+#country-name-1{
+    border-bottom: .5px solid salmon;
 }
 
 #temp-c {
@@ -16,22 +20,22 @@
 }
 
 @media(max-width: 272px){
-    #card-content {
+    #card-content-1 {
         width: 100%;
     }
 }
 
 @media(max-width: 208px){
-    #img-container {
+    #img-container-1 {
         height: 64px; 
         width: 64px
     }
 
-    #city-name{
+    #city-name-1{
         font-size: 1rem
     }
 
-    #country-name {
+    #country-name-1 {
         font-size: .85rem;
     }
 

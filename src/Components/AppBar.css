@@ -1,4 +1,4 @@
-#container{
+#container-appbar{
     height: 4rem;
     width: 95vw;
     margin-top: 1.2rem;
@@ -14,33 +14,33 @@
 }
 
 @media(max-width: 400px){
-    #container{
+    #container-appbar{
         height: 5rem;
         font-size: 1.4rem;
     }
 }
 
 @media(max-width: 400px){
-    #container{
+    #container-appbar{
         font-size: 1rem;
     }
 }
 
 @media(max-width: 170px){
-    #container{
+    #container-appbar{
         font-size: .75rem;
     }
 }
 
 @media(max-width: 110px){
-    #container{
+    #container-appbar{
         letter-spacing: .15rem;
         font-size: .55rem;
     }
 }
 
 @media(max-width: 208px){
-    #container{
+    #container-appbar{
         margin-left: 0;
         padding-left: .5em;
     }

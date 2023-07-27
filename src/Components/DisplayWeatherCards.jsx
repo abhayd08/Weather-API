@@ -120,13 +120,13 @@ export default function DisplayWeatherCards ({displayContentWhileSearch2, setDis
                                     <CardMedia component = "img"
                                     image = {cityData.current.condition.icon}
                                     alt = "Weather-icon"
-                                    id = "img-container"
+                                    id = "img-container-1"
                                     />
-                                    <CardContent id = "card-content">
+                                    <CardContent id = "card-content-1">
                                         <Box style = {{display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap : "wrap"}}>
                                             <ul className = "list-unstyled">
-                                                <li id = "city-name" className = "mx-1 text-body-secondary text-decoration-none" variant = "title1"><strong>{`${cityData.location.name}`},</strong></li>
-                                                <li id = "country-name" className = "mx-1 text-body-secondary text-decoration-none" variant = "subtitle2" style = {{fontWeight: "lighter"}}><strong>{`${cityData.location.country}`}</strong></li>
+                                                <li id = "city-name-1" className = "mx-1 text-body-secondary text-decoration-none" variant = "title1"><strong>{`${cityData.location.name}`},</strong></li>
+                                                <li id = "country-name-1" className = "mx-1 text-body-secondary text-decoration-none" variant = "subtitle2" style = {{fontWeight: "lighter"}}><strong>{`${cityData.location.country}`}</strong></li>
                                             </ul>
                                         </Box>
                                         <Box style = {{display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap"}}>

@@ -3,7 +3,7 @@ import "./AppBar.css"
 
 const AppBar = () => {
     return (
-        <Box id = "container">
+        <Box id = "container-appbar">
             <strong className = "text-body-secondary text-decoration-none">Weather Forecast :)</strong>
         </Box>
     )

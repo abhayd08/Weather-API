@@ -22,43 +22,43 @@ const WeatherCard = ({weatherData}) => {
     )
 
     return (
-            <Card id = "card-container">
+            <Card id = "card-container-weathercard">
                 <CardMedia component = "img"
                 image = {weatherData.current.condition.icon}
-                id = "img-container"
+                id = "img-container-weathercard"
                 />
                 <CardContent>
                     <Box style = {{display: "flex", justifyContent: "center", alignItems: "center", flexWrap : "wrap"}}>
                         <ul className = "list-unstyled">
-                            <li id = "city-name" className = "mx-1 text-body-secondary text-decoration-none" variant = "title1"><strong>{`${weatherData.location.name}`},</strong></li>
-                            <li className = "mx-1 text-body-secondary text-decoration-none" id = "country-name" variant = "subtitle2"><strong>{`${weatherData.location.country}`}</strong></li>
+                            <li id = "city-name-weathercard" className = "mx-1 text-body-secondary text-decoration-none" variant = "title1"><strong>{`${weatherData.location.name}`},</strong></li>
+                            <li className = "mx-1 text-body-secondary text-decoration-none" id = "country-name-weathercard" variant = "subtitle2"><strong>{`${weatherData.location.country}`}</strong></li>
                         </ul>
                     </Box>
-                    <Box className = "content-title mt-5">
+                    <Box className = "content-title-weathercard mt-5">
                     <Typography component = "h6" variant = "subtitle">Condition</Typography>
                     <Typography variant = "subtitle1">{weatherData.current.condition.text}</Typography>
                     </Box>
-                    <Box className = "content-title">
+                    <Box className = "content-title-weathercard">
                     <Typography component = "h6" variant = "subtitle">Wind speed</Typography>
                     <Typography variant = "subtitle1">{`${weatherData.current["wind_kph"]} km/h`}</Typography>
                     </Box>
-                    <Box className = "content-title">
+                    <Box className = "content-title-weathercard">
                     <Typography component = "h6" variant = "subtitle">Humidity</Typography>
                     <Typography variant = "subtitle1">{`${weatherData.current.humidity} %`}</Typography>
                     </Box>
-                    <Box className = "content-title">
+                    <Box className = "content-title-weathercard">
                     <Typography component = "h6" variant = "subtitle">Cloud Coverage</Typography>
                     <Typography variant = "subtitle1">{`${weatherData.current.cloud} %`}</Typography>
                     </Box>
-                    <Box className = "content-title">
+                    <Box className = "content-title-weathercard">
                     <Typography component = "h6" variant = "subtitle">Wind Gust Speed</Typography>
                     <Typography variant = "subtitle1">{`${weatherData.current["gust_kph"]} km/h`}</Typography>
                     </Box>
-                    <Box className = "content-title">
+                    <Box className = "content-title-weathercard">
                     <Typography component = "h6" variant = "subtitle">Last Updated</Typography>
                     <Typography variant = "subtitle1">{lastTimeUpdated}</Typography>
                     </Box>
-                    <Box id = "last-content" className = "content-title">
+                    <Box id = "last-content-weathercard" className = "content-title-weathercard">
                     <Typography component = "h6" variant = "subtitle">Local Time</Typography>
                     <Typography variant = "subtitle1">{currentLocalTime.split("at").join(",")}</Typography>
                     </Box>

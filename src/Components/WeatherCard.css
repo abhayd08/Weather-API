@@ -1,4 +1,4 @@
-#card-container{
+#card-container-weathercard{
     width: 60vw; 
     height: auto;
     margin: auto;
@@ -8,7 +8,7 @@
     border-radius: 1rem;
 }
 
-.content-title{
+.content-title-weathercard{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,73 +20,73 @@
     border-bottom-style: groove;
 }
 
-#img-container{
+#img-container-weathercard{
     height: 112px;
     width: 112px
 }
 
-#city-name{
+#city-name-weathercard{
     font-size: 2rem
 }
 
-#country-name{
+#country-name-weathercard{
     font-size: 1.2rem;
     border-bottom: .5px solid salmon;
 }
 
-#last-content {
+#last-content-weathercard {
     border-bottom: 0;
 }
 
 @media(max-width: 592px) {
-    #card-container{
+    #card-container-weathercard{
         width: 85vw
     }
 }
 
 @media(max-width: 500px) {
-    .content-title{
+    .content-title-weathercard{
         flex-direction: column;
         margin-bottom: 1.35rem;
         justify-content: center;
     }
 
-    #img-container{
+    #img-container-weathercard{
         height: 80px;
         width: 80px
     }
 
-    #city-name{
+    #city-name-weathercard{
         font-size: 1.4rem
     }
     
-    #country-name{
+    #country-name-weathercard{
         font-size: 1rem
     }
 }
 
 @media(min-width: 768px) {
-    #card-container{
+    #card-container-weathercard{
         width: 50vw;
     }
 
 }
 
 @media(min-width: 992px) {
-    #card-container{
+    #card-container-weathercard{
         width: 40vw;
     }
 }
 
 @media(max-width: 208px) {
-    .content-title{
+    .content-title-weathercard{
         font-size: .90em;
     }
-    #city-name{
+    #city-name-weathercard{
         font-size: 1rem
     }
     
-    #country-name{
+    #country-name-weathercard{
         font-size: .85rem
     }
 }
