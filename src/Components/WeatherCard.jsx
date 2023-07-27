@@ -27,7 +27,7 @@ const WeatherCard = ({weatherData}) => {
                 image = {weatherData.current.condition.icon}
                 id = "img-container-weathercard"
                 />
-                <CardContent>
+                <CardContent id = "weathercard-content">
                     <Box style = {{display: "flex", justifyContent: "center", alignItems: "center", flexWrap : "wrap"}}>
                         <ul className = "list-unstyled">
                             <li id = "city-name-weathercard" className = "mx-1 text-body-secondary text-decoration-none" variant = "title1"><strong>{`${weatherData.location.name}`},</strong></li>

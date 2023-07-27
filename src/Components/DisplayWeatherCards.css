@@ -19,9 +19,21 @@
     font-size: 2em 
 }
 
+#weathercards-card{
+    background-color: rgb(134 254 144 / 28%); 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center
+}
+
 @media(max-width: 272px){
     #card-content-1 {
         width: 100%;
+    }
+
+    #weathercards-card{
+        overflow-x: scroll;
     }
 }
 
@@ -29,6 +41,10 @@
     #img-container-1 {
         height: 64px; 
         width: 64px
+    }
+
+    #card-content-1 {
+        padding: 5px;
     }
 
     #city-name-1{

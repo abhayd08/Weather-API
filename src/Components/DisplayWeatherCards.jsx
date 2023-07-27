@@ -116,7 +116,7 @@ export default function DisplayWeatherCards ({displayContentWhileSearch2, setDis
     
                         return (
                             <Grid item key ={cityData.location.name} className = "my-3" xl = {1.8} lg = {2.75} md = {3.75} sm = {4.75} xs = {10.5}>
-                                <Card style = {{backgroundColor: "rgb(134 254 144 / 28%)", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+                                <Card id = "weathercards-card" >
                                     <CardMedia component = "img"
                                     image = {cityData.current.condition.icon}
                                     alt = "Weather-icon"

@@ -26,11 +26,13 @@
 }
 
 #city-name-weathercard{
-    font-size: 2rem
+    font-size: 2rem;
+    text-align: center;
 }
 
 #country-name-weathercard{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    text-align: center;
     border-bottom: .5px solid salmon;
 }
 
@@ -40,8 +42,10 @@
 
 @media(max-width: 592px) {
     #card-container-weathercard{
-        width: 85vw
+        width: 85vw;
+        overflow-x: scroll;
     }
+    
 }
 
 @media(max-width: 500px) {
@@ -57,7 +61,7 @@
     }
 
     #city-name-weathercard{
-        font-size: 1.5rem
+        font-size: 1.75rem
     }
     
     #country-name-weathercard{
@@ -88,5 +92,10 @@
     
     #country-name-weathercard{
         font-size: .85rem
+    }
+
+    #weathercard-content{
+        padding: 0;
+        padding-top: 1rem;
     }
 }
