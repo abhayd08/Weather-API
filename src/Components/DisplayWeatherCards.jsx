@@ -42,9 +42,8 @@ export default function DisplayWeatherCards ({displayContentWhileSearch2, setDis
                 const responseAhmedabad = await axios.get("https://api.weatherapi.com/v1/current.json?key=77c435ebd76949e38e4155526232307&q=Ahmedabad, India")
                 setWeatherDataAhmedabad(responseAhmedabad.data)
 
-                setTimeout(()=>{
+
                     setDisplayContentWhileSearch2("")
-                }, 700)
 
             }
             catch(error) {
