@@ -30,8 +30,8 @@ const WeatherCard = ({weatherData}) => {
                 <CardContent>
                     <Box style = {{display: "flex", justifyContent: "center", alignItems: "center", flexWrap : "wrap"}}>
                         <ul className = "list-unstyled">
-                            <li style = {{fontSize: "2rem"}} className = "mx-1 text-body-secondary text-decoration-none" variant = "title1"><strong>{`${weatherData.location.name}`},</strong></li>
-                            <li className = "mx-1 text-body-secondary text-decoration-none" variant = "subtitle2" style = {{ fontSize: "1.2rem"}}><strong>{`${weatherData.location.country}`}</strong></li>
+                            <li id = "city-name" className = "mx-1 text-body-secondary text-decoration-none" variant = "title1"><strong>{`${weatherData.location.name}`},</strong></li>
+                            <li className = "mx-1 text-body-secondary text-decoration-none" id = "country-name" variant = "subtitle2"><strong>{`${weatherData.location.country}`}</strong></li>
                         </ul>
                     </Box>
                     <Box className = "content-title mt-5">

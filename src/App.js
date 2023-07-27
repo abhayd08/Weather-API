@@ -20,6 +20,16 @@ function App() {
   const [inputValue, setInputValue] = useState("")
   const [weatherData, setWeatherData] = useState("")
   const [displayContentWhileSearch, setDisplayContentWhileSearch] = useState("")
+  const [displayContentWhileSearch2, setDisplayContentWhileSearch2] = useState("")
+
+  useEffect(()=>{
+    setDisplayContentWhileSearch2(
+        <Box className = "display-content-while-search">
+            <CircularProgress color = "success" />
+            <strong className = "text-black" style = {{marginTop: "1rem"}}>Loading...</strong>
+        </Box>
+    )
+  }, [])
 
 
   useEffect(()=>{
@@ -78,7 +88,8 @@ function App() {
       <DisplayBox inputValue = {inputValue} setInputValue = {setInputValue} weatherData = {weatherData}/>
     </Box>
     {weatherData?<WeatherCard weatherData = {weatherData}/> : displayContentWhileSearch}
-    <DisplayWeatherCards />
+    {displayContentWhileSearch2}
+    <DisplayWeatherCards displayContentWhileSearch2 = {displayContentWhileSearch2} setDisplayContentWhileSearch2 = {setDisplayContentWhileSearch2}/>
     <BodyStyles weatherData={weatherData} /> 
     <Footer />
     </>

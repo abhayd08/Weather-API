@@ -7,10 +7,17 @@
     height: 3rem;
     background-color: #0dcaf04a;
     flex-wrap: wrap;
+    text-align: center;
   }
 
   @media(max-width: 320px){
     #header{
       display:  none;
+    }
+  }
+
+  @media(max-width: 592px){
+    #header{
+      height: 6rem;
     }
   }

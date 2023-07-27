@@ -20,6 +20,14 @@
     border-bottom-style: groove;
 }
 
+#city-name{
+    font-size: 2rem
+}
+
+#country-name{
+    font-size: 1.2rem
+}
+
 #last-content {
     border-bottom: 0;
 }
@@ -36,6 +44,14 @@
         margin-bottom: 1.35rem;
         justify-content: center;
     }
+
+    #city-name{
+        font-size: 1.4rem
+    }
+    
+    #country-name{
+        font-size: 1rem
+    }
 }
 
 @media(min-width: 768px) {
@@ -48,5 +64,18 @@
 @media(min-width: 992px) {
     #card-container{
         width: 40vw;
+    }
+}
+
+@media(max-width: 208px) {
+    .content-title{
+        font-size: .90em;
+    }
+    #city-name{
+        font-size: 1.05rem
+    }
+    
+    #country-name{
+        font-size: .85rem
     }
 }

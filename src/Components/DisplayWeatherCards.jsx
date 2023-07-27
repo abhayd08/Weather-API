@@ -1,10 +1,10 @@
 import React from "react"
 import {useState, useEffect} from "react"
-import {Card, CardMedia, CardContent, Box, Grid, Typography, CircularProgress} from "@mui/material"
+import {Card, CardMedia, CardContent, Box, Grid, Typography} from "@mui/material"
 import axios from "axios";
 import MuiAlert from '@mui/material/Alert';
 
-export default function DisplayWeatherCards () {
+export default function DisplayWeatherCards ({displayContentWhileSearch2, setDisplayContentWhileSearch2}) {
     const [weatherDataVaranasi, setWeatherDataVaranasi] = useState("")
     const [weatherDataNewDelhi, setWeatherDataNewDelhi] = useState("")
     const [weatherDataMumbai, setWeatherDataMumbai] = useState("")
@@ -14,22 +14,11 @@ export default function DisplayWeatherCards () {
     const [weatherDataUnnao, setWeatherDataUnnao] = useState("")
     const [weatherDataAhmedabad, setWeatherDataAhmedabad] = useState("")
 
-    const [displayContentWhileSearch, setDisplayContentWhileSearch] = useState("")
-
     const Alert = React.forwardRef(function Alert(props, ref) {
         return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
       });
 
     const weatherDataArray = [weatherDataVaranasi, weatherDataNewDelhi, weatherDataMumbai, weatherDataLucknow, weatherDataBangalore, weatherDataIndore, weatherDataUnnao, weatherDataAhmedabad]
-
-    useEffect(()=>{
-        setDisplayContentWhileSearch(
-            <Box className = "display-content-while-search">
-                <CircularProgress color = "success" />
-                <strong className = "text-black" style = {{marginTop: "1rem"}}>Loading...</strong>
-            </Box>
-        )
-    }, [])
     
     useEffect(()=>{
         (async ()=>{
@@ -53,24 +42,24 @@ export default function DisplayWeatherCards () {
                 setWeatherDataAhmedabad(responseAhmedabad.data)
 
                 setTimeout(()=>{
-                    setDisplayContentWhileSearch("")
-                }, 1500)
+                    setDisplayContentWhileSearch2("")
+                }, 700)
 
             }
             catch(error) {
                 console.log(error)
 
-                setDisplayContentWhileSearch(<Box className = "display-content-while-search">                      
+                setDisplayContentWhileSearch2(<Box className = "display-content-while-search">                      
                                                 <Alert id = "alert" severity="error" sx={{ width: '35vw' }}>
                                                     There is an error loading the data. Please check the console tab for more details.
                                                 </Alert>
-                                             </Box>
+                                              </Box>
                 )
             }
         }
         )()
 
-    }, [])
+    }, [setDisplayContentWhileSearch2])
 
     useEffect(()=>{
         const timerId = setInterval(async ()=>{
@@ -96,7 +85,7 @@ export default function DisplayWeatherCards () {
             catch(error) {
                 console.log(error)
 
-                setDisplayContentWhileSearch(<Box className = "display-content-while-search">                      
+                setDisplayContentWhileSearch2(<Box className = "display-content-while-search">                      
                                                 <Alert id = "alert" severity="error" sx={{ width: '35vw' }}>
                                                     There is an error loading the data. Please check the console tab for more details.
                                                 </Alert>
@@ -113,7 +102,6 @@ export default function DisplayWeatherCards () {
     if(weatherDataArray[0] !== "" && weatherDataArray[1] !== "" && weatherDataArray[3] !== "" && weatherDataArray[3] !== "" && weatherDataArray[4] !== "" && weatherDataArray[5] !== ""  && weatherDataArray[6] !== "" && weatherDataArray[7] !== "" ){
         return (
             <Box>
-                {displayContentWhileSearch}
                 <Grid container style = {{marginTop: "2.5rem", display: "flex", justifyContent: "space-around"}}>
                     {weatherDataArray.map((cityData)=>{
     
@@ -137,7 +125,7 @@ export default function DisplayWeatherCards () {
                                     <CardContent style = {{width: "95%"}}>
                                         <Box style = {{display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap : "wrap"}}>
                                             <ul className = "list-unstyled">
-                                                <li style = {{fontSize: "1.3rem"}} className = "mx-1 text-body-secondary text-decoration-none" variant = "title1"><strong>{`${cityData.location.name}`}</strong></li>
+                                                <li style = {{fontSize: "1.3rem"}} className = "mx-1 text-body-secondary text-decoration-none" variant = "title1"><strong>{`${cityData.location.name}`},</strong></li>
                                                 <li className = "mx-1 text-body-secondary text-decoration-none" variant = "subtitle2" style = {{fontWeight: "lighter"}}><strong>{`${cityData.location.country}`}</strong></li>
                                             </ul>
                                         </Box>
