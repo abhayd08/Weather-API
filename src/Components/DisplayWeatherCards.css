@@ -1,0 +1,45 @@
+#img-container {
+    height: 96px; 
+    width: 96px
+}
+
+#card-content {
+    width: 95%;
+}
+
+#city-name{
+    font-size: 1.3rem
+}
+
+#temp-c {
+    font-size: 2em 
+}
+
+@media(max-width: 272px){
+    #card-content {
+        width: 100%;
+    }
+}
+
+@media(max-width: 208px){
+    #img-container {
+        height: 64px; 
+        width: 64px
+    }
+
+    #city-name{
+        font-size: 1rem
+    }
+
+    #country-name {
+        font-size: .85rem;
+    }
+
+    #temp-c {
+        font-size: 1.3em 
+    }
+
+    #temp-f {
+        font-size: .9em 
+    }
+}

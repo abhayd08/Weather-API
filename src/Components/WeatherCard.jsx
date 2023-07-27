@@ -25,7 +25,7 @@ const WeatherCard = ({weatherData}) => {
             <Card id = "card-container">
                 <CardMedia component = "img"
                 image = {weatherData.current.condition.icon}
-                sx = {{height: "112px", width: "112px"}}
+                id = "img-container"
                 />
                 <CardContent>
                     <Box style = {{display: "flex", justifyContent: "center", alignItems: "center", flexWrap : "wrap"}}>

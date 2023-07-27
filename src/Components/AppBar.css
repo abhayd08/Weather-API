@@ -34,8 +34,14 @@
 
 @media(max-width: 110px){
     #container{
-        margin-left: 0;
         letter-spacing: .15rem;
         font-size: .55rem;
+    }
+}
+
+@media(max-width: 208px){
+    #container{
+        margin-left: 0;
+        padding-left: .5em;
     }
 }

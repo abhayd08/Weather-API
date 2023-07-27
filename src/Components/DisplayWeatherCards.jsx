@@ -3,6 +3,7 @@ import {useState, useEffect} from "react"
 import {Card, CardMedia, CardContent, Box, Grid, Typography} from "@mui/material"
 import axios from "axios";
 import MuiAlert from '@mui/material/Alert';
+import "./DisplayWeatherCards.css"
 
 export default function DisplayWeatherCards ({displayContentWhileSearch2, setDisplayContentWhileSearch2}) {
     const [weatherDataVaranasi, setWeatherDataVaranasi] = useState("")
@@ -120,18 +121,18 @@ export default function DisplayWeatherCards ({displayContentWhileSearch2, setDis
                                     <CardMedia component = "img"
                                     image = {cityData.current.condition.icon}
                                     alt = "Weather-icon"
-                                    sx = {{height: "96px", width: "96px"}}
+                                    id = "img-container"
                                     />
-                                    <CardContent style = {{width: "95%"}}>
+                                    <CardContent id = "card-content">
                                         <Box style = {{display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap : "wrap"}}>
                                             <ul className = "list-unstyled">
-                                                <li style = {{fontSize: "1.3rem"}} className = "mx-1 text-body-secondary text-decoration-none" variant = "title1"><strong>{`${cityData.location.name}`},</strong></li>
-                                                <li className = "mx-1 text-body-secondary text-decoration-none" variant = "subtitle2" style = {{fontWeight: "lighter"}}><strong>{`${cityData.location.country}`}</strong></li>
+                                                <li id = "city-name" className = "mx-1 text-body-secondary text-decoration-none" variant = "title1"><strong>{`${cityData.location.name}`},</strong></li>
+                                                <li id = "country-name" className = "mx-1 text-body-secondary text-decoration-none" variant = "subtitle2" style = {{fontWeight: "lighter"}}><strong>{`${cityData.location.country}`}</strong></li>
                                             </ul>
                                         </Box>
                                         <Box style = {{display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap"}}>
-                                            <strong style = {{fontSize: "2em"}} className = "text-body-secondary text-decoration-none">{cityData.current["temp_c"]}°C</strong>
-                                            <strong className = "text-body-secondary text-decoration-none">{cityData.current["temp_f"]}°F</strong>
+                                            <strong id = "temp-c" className = "text-body-secondary text-decoration-none">{cityData.current["temp_c"]}°C</strong>
+                                            <strong id = "temp-f" className = "text-body-secondary text-decoration-none">{cityData.current["temp_f"]}°F</strong>
                                         </Box>
                                         <Box className = "mt-5">
                                             <Typography variant = "subtitle2">{lastTimeUpdated}</Typography>

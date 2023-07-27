@@ -54,8 +54,8 @@
 @media(max-width: 560px){
     #label{
         font-size: .9rem;
-        padding-left: 0;
     }
+
 }
 
 @media(max-width: 320px){
@@ -74,12 +74,17 @@
 
 @media(max-width: 110px){
     #label{
-        padding-left: 0;
+        padding-left: .125em;
         font-size: .75rem;
         letter-spacing: 1px;
-        font-weight: lighter;
     }
     #input-box {
         border-radius: 0;
+    }
+}
+
+@media(max-width: 208px){
+    #label{
+        font-weight: lighter;
     }
 }

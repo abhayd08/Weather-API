@@ -20,12 +20,18 @@
     border-bottom-style: groove;
 }
 
+#img-container{
+    height: 112px;
+    width: 112px
+}
+
 #city-name{
     font-size: 2rem
 }
 
 #country-name{
-    font-size: 1.2rem
+    font-size: 1.2rem;
+    border-bottom: .5px solid salmon;
 }
 
 #last-content {
@@ -43,6 +49,11 @@
         flex-direction: column;
         margin-bottom: 1.35rem;
         justify-content: center;
+    }
+
+    #img-container{
+        height: 80px;
+        width: 80px
     }
 
     #city-name{
@@ -72,7 +83,7 @@
         font-size: .90em;
     }
     #city-name{
-        font-size: 1.05rem
+        font-size: 1rem
     }
     
     #country-name{
