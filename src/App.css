@@ -33,3 +33,9 @@
         height: 0;
     }
 }
+
+@media(min-width: 1400px){
+    #blank-container {
+    height: 8.5rem;
+    }
+}
