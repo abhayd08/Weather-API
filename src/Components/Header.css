@@ -15,9 +15,3 @@
       display:  none;
     }
   }
-
-  @media(max-width: 592px){
-    #header{
-      height: 6rem;
-    }
-  }
